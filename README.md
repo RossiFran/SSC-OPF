@@ -1,5 +1,5 @@
 # Small-signal Constrained Optimal Power Flow (SSC-OPF)
-This repository contains codes for the paper:
+This repository contains codes for developing an optimal power flow with regression-based small-signal stability constraints.
 
 ## Data
 This repository includes the scripts used for case studies and is organized as follows:
