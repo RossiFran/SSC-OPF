@@ -1,0 +1,17 @@
+- iter_num: numero de iteracion en que se han generado los datos (ignore)
+- VSC: Potencia injectada por el convertidor
+- SG1: Potencia injectada por el generador sincrono 1
+- SG2: Potencia injectada por el generador sincrono 2 
+- PLTOT: Demanda total de potencia
+- PL2-PL9: Demanda de las cargas 2-9
+- DI: Damping Index, indicador de estabilidad. Si el DI es mayor que 1 el sistema es inestable
+- V1-V9 : tension en los buses 1-9 en p.u.
+- Theta 1-9: angulo de la tension en rad
+- P1 = VSC (ignorar)
+- Q1: Potencia reactiva injectada o absorbida por el convertidor
+- P5 = SG2 (ignore)
+- P6 = SG1 (ignore)
+- f: frequecia (ignore)
+- Exitflag: indica si el calculo es valido (=1 valid, =0 o =-1 no valid)
+
+Todas las potencias estan en p.u. del sistema (100 MVA)

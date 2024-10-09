@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# PyCharm
+idea/
+.idea/
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+# Local History for Visual Studio Code
+.history/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+env/
+venv/
+
+
