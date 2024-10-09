@@ -32,8 +32,8 @@ elseif obj_fun == "Min_P_losses"
 end
 
 %% Load the trained regression models
-constraint = fileread('..\D. Regression Training\MARS_expression_obj_fun.txt');
-predict_DI = fileread('..\D. Regression Training\MARS_expression_DIpred.txt');
+constraint = fileread('..\D.RegressionTraining\MARS_expression_obj_fun.txt');
+predict_DI = fileread('..\D.RegressionTraining\MARS_expression_DIpred.txt');
 
 %% Sample random power demand or compute the same case of the Test Data Set
 
@@ -59,7 +59,7 @@ if samples_choice=="new_random_samples"
 
 elseif samples_choice=="Test_Data_Set"
     
-    test_data=xlsread(['../A. Data Generation/Test Data/Data Set ',obj_fun,'/Test_Data_OPF_',obj_fun,'.xlsx']);
+    test_data=xlsread(['../A.DataGeneration/TestData/DataSet',obj_fun,'/Test_Data_OPF_',obj_fun,'.xlsx']);
     
     Pd_samples=test_data(:,5);
 

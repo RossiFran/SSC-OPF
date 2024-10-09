@@ -225,12 +225,12 @@ end
 
 if plot_datagen_2d==1 && save_plot_datagen ==1
     
-    saveas(gcf,'Data Set\Training_DataSet_GDCT_2D.png')
+    saveas(gcf,'DataSet\Training_DataSet_GDCT_2D.png')
 end
 
 if plot_datagen_3d==1 && save_plot_datagen ==1
     
-    saveas(gcf,'Data Set\Training_DataSet_GDCT_3D.png')
+    saveas(gcf,'DataSet\Training_DataSet_GDCT_3D.png')
 end
 
 inputs_table=array2table(inputs,'VariableNames',{'Iter_num','VSC','SG2','SG1','PLTOT','Rdroop','PL2','PL3','PL4','PL5','PL6','PL7','PL8','PL9','DI'});
@@ -239,13 +239,13 @@ solutions_table=array2table(sol_vect,'VariableNames',{'V1','V2','V3','V4','V5','
     'P1','Q1','P5','P6','f','Exitflag'});
 
 training_data=[inputs_table,solutions_table];
-filename=(['Data Set\training_data_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
+filename=(['DataSet\training_data_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
 writetable(training_data, filename);
 
 real_eig_table=array2table(real_parts_eig);
-filename=(['Data Set\real_parts_eigenvalues_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
+filename=(['DataSet\real_parts_eigenvalues_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
 writetable(real_eig_table,filename);
 
 imag_eig_table=array2table(imag_parts_eig);
-filename=(['Data Set\imag_parts_eigenvalues_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
+filename=(['DataSet\imag_parts_eigenvalues_LHS',num2str(nlhs),'_',num2str(nlhs2),'_nreg',num2str(n_reg),'.xlsx']);
 writetable(imag_eig_table,filename);

@@ -7,8 +7,8 @@ from sklearn.model_selection import train_test_split
 
 #%% Load Trainig Data Set
 
-df_real=pd.read_excel('../A. Data Generation/Training Data/Data Set/real_parts_eigenvalues_LHS10_20_nreg9.xlsx')
-df_imag=pd.read_excel('../A. Data Generation/Training Data/Data Set/imag_parts_eigenvalues_LHS10_20_nreg9.xlsx')
+df_real=pd.read_excel('../A.DataGeneration/TrainingData/DataSet/real_parts_eigenvalues_LHS10_20_nreg9.xlsx')
+df_imag=pd.read_excel('../A.DataGeneration/TrainingData/DataSet/imag_parts_eigenvalues_LHS10_20_nreg9.xlsx')
 
 n_cases= len(df_real)
 
@@ -66,7 +66,7 @@ fig.savefig('Training_Zoom_on_critical_eigenvalues.png')
 
 DI_crit_eig=1-(-crit_eig_real[:,0]/np.sqrt(crit_eig_real[:,0]**2+crit_eig_imag[:,0]**2))
 
-inputs=pd.read_excel('../A. Data Generation/Training Data/Data Set/training_data_LHS10_20_nreg9.xlsx')
+inputs=pd.read_excel('../A.DataGeneration/TrainingData/DataSet/training_data_LHS10_20_nreg9.xlsx')
 inputs['DI_crit']=DI_crit_eig
 pd.DataFrame.to_csv(inputs,'Training_inputs_DI_crit_LHS10_20_nreg9.csv', index=False)
 
@@ -75,8 +75,8 @@ pd.DataFrame.to_csv(inputs,'Training_inputs_DI_crit_LHS10_20_nreg9.csv', index=F
 #obj_fun='Min_P_SG'
 obj_fun='Min_P_losses'
 
-df_real=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/real_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
-df_imag=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/imag_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
+df_real=pd.read_excel('../A.DataGeneration/TrainingData/DataSet'+obj_fun+'/real_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
+df_imag=pd.read_excel('../A.DataGeneration/TrainingData/DataSet'+obj_fun+'/imag_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
 
 n_cases= len(df_real)
 
@@ -132,6 +132,6 @@ fig.savefig(obj_fun+'Zoom_on_critical_eigenvalues.png')
 #%%
 DI_crit_eig=1-(-crit_eig_real[:,0]/np.sqrt(crit_eig_real[:,0]**2+crit_eig_imag[:,0]**2))
 
-inputs=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/test_data_OPF_'+obj_fun+'.xlsx')
+inputs=pd.read_excel('../A.DataGeneration/TrainingData/DataSet'+obj_fun+'/test_data_OPF_'+obj_fun+'.xlsx')
 inputs['DI_crit']=DI_crit_eig
 pd.DataFrame.to_csv(inputs,'Test_data'+obj_fun+'_inputs_DI_crit.csv', index=False)

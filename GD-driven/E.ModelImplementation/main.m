@@ -33,8 +33,8 @@ elseif obj_fun == "Min_P_losses"
 end
 
 %% Load the trained regression models
-constraint = fileread('..\D. Regression Training\MARS_expression_obj_fun.txt');
-predict_DI = fileread('..\D. Regression Training\MARS_expression_DIpred.txt');
+constraint = fileread('..\D.RegressionTraining\MARS_expression_obj_fun.txt');
+predict_DI = fileread('..\D.RegressionTraining\MARS_expression_DIpred.txt');
 
 %% Sample random power demand or compute the same case of the Test Data Set
 
@@ -60,7 +60,7 @@ if samples_choice=="new_random_samples"
 
 elseif samples_choice=="Test_Data_Set"
     
-    results=xlsread(['../A. Data Generation/Test Data/Data Set ',obj_fun,'/Test_Data_OPF_',obj_fun,'.xlsx']);
+    results=xlsread(['../A.DataGeneration/TestData/DataSet',obj_fun,'/Test_Data_OPF_',obj_fun,'.xlsx']);
     
     Pd_samples=results(:,5);
 
@@ -106,8 +106,6 @@ for jj=1:n_samples
     real_parts_eig(jj,:)=real_lambda;
     imag_parts_eig(jj,:)=imag_lambda;
 
-    %Predicted critical eigenvalues' DI 
-%    DI_pred(jj)=0.984008+max(0,0.416303-dat.Pd90)*0.0876049+max(0,sol(22)-0.303393)*(-0.157552)+max(0,0.303393-sol(22))*0.1994+max(0,theta(3,1)+0.0136921)*9.31738+max(0,-0.0136921-theta(3,1))*(-10.2568)+sol(21)*(-0.147466)+max(0,dat.Pd30-0.232119)*0.0679659+max(0,0.232119-dat.Pd30)*0.068344+max(0,0.150587-dat.Pd70)*0.167272+max(0,dat.Pd40-0.367371)*0.0147017+max(0,0.367371-dat.Pd40)*0.0605988+max(0,dat.Pd50-0.194075)*0.0216427+max(0,0.194075-dat.Pd50)*0.0864888;
     DI_pred(jj)=eval(predict_DI);
 
     if plot_poles == 1

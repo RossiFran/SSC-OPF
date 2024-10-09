@@ -114,18 +114,18 @@ solutions_table=array2table(sol_vect,'VariableNames',{'V1','V2','V3','V4','V5','
     'P1','Q1','P5','P6','f','Exitflag','ObjFun'});
 
 test_data=[inputs_table,solutions_table];
-filename=(['Data Set ',obj_fun,'\test_data_OPF_',obj_fun,'.xlsx']);
+filename=(['DataSet',obj_fun,'\test_data_OPF_',obj_fun,'.xlsx']);
 writetable(test_data, filename);
 
 real_eig_table=array2table(real_parts_eig);
-filename=(['Data Set ',obj_fun,'\real_parts_eigenvalues_OPF_',obj_fun,'.xlsx']);
+filename=(['DataSet',obj_fun,'\real_parts_eigenvalues_OPF_',obj_fun,'.xlsx']);
 writetable(real_eig_table,filename);
 
 imag_eig_table=array2table(imag_parts_eig);
-filename=(['Data Set ',obj_fun,'\imag_parts_eigenvalues_OPF_',obj_fun,'.xlsx']);
+filename=(['DataSet',obj_fun,'\imag_parts_eigenvalues_OPF_',obj_fun,'.xlsx']);
 writetable(imag_eig_table,filename);
 
 
 comp_burn=array2table(comp_burn,'VariableNames',{'time','n_iter'});
-filename=(['Data Set ',obj_fun,'\comp_burn_OPF_',obj_fun,'.xlsx']);
+filename=(['DataSet',obj_fun,'\comp_burn_OPF_',obj_fun,'.xlsx']);
 writetable(comp_burn,filename);

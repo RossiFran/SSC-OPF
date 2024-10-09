@@ -15,7 +15,7 @@ plt.rcParams.update({
 
 #%% Load Training Data
 
-Training_data=pd.read_csv('../B. Identification of groups of critical eigenvalues/Training_inputs_DI_crit_LHS10_10_nreg9.csv').drop(['Iter_num','DI','PLTOT','f','Exitflag'],axis=1)
+Training_data=pd.read_csv('../B.IdentificationOfGroupsOfCriticalEigenvalues/Training_inputs_DI_crit_LHS10_10_nreg9.csv').drop(['Iter_num','DI','PLTOT','f','Exitflag'],axis=1)
 
 #%% Remove correlated variables
 
@@ -94,7 +94,7 @@ r2_summary=pd.DataFrame()
 ind=0
 for obj_fun in ['Min_P_SG','Min_P_losses']:
 
-    Test_data=pd.read_csv('../B. Identification of groups of critical eigenvalues/Test_data'+obj_fun+'_inputs_DI_crit.csv').drop(['DI','PLTOT','f','Exitflag','ObjFun'],axis=1)
+    Test_data=pd.read_csv('../B.IdentificationOfGroupsOfCriticalEigenvalues/Test_data'+obj_fun+'_inputs_DI_crit.csv').drop(['DI','PLTOT','f','Exitflag','ObjFun'],axis=1)
 
     Xtest=Test_data[uncorr_var]
     ytest=Test_data['DI_crit']

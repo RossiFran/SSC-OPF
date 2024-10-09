@@ -15,7 +15,7 @@ plt.rcParams.update({
 # %% Load Training Data
 
 Training_data = pd.read_csv(
-    '../B. Identification of groups of critical eigenvalues/Training_inputs_DI_crit_LHS10_10_nreg9.csv').drop(
+    '../B.IdentificationOfGroupsOfCriticalEigenvalues/Training_inputs_DI_crit_LHS10_10_nreg9.csv').drop(
     ['Iter_num', 'DI', 'PLTOT','f', 'Exitflag'], axis=1)
 
 # %% Remove correlated variables

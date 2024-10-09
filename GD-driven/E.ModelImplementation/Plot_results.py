@@ -92,8 +92,8 @@ r2=r2_score(DI_Exact_crit_eig_SSCOPF,DI_Pred_crit_eig_SSCOPF)
 
 #%% Load OPF Results
 
-df_real=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/real_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
-df_imag=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/imag_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
+df_real=pd.read_excel('../A.DataGeneration/TestData/DataSet'+obj_fun+'/real_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
+df_imag=pd.read_excel('../A.DataGeneration/TestData/DataSet'+obj_fun+'/imag_parts_eigenvalues_OPF_'+obj_fun+'.xlsx')
 
 n_cases= len(df_real)
 
@@ -115,8 +115,8 @@ for ii in range(0,n_cases):
     crit_eig_real[ii,1]=re.loc[re>=-120][0]
     crit_eig_imag[ii,1]=np.array(im[re.loc[re>=-120].index[0].replace('real','imag')])
 
-res_opf=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/Test_data_OPF_'+obj_fun+'.xlsx')
-comp_opf=pd.read_excel('../A. Data Generation/Test Data/Data Set '+obj_fun+'/comp_burn_OPF_'+obj_fun+'.xlsx')
+res_opf=pd.read_excel('../A.DataGeneration/TestData/DataSet'+obj_fun+'/Test_data_OPF_'+obj_fun+'.xlsx')
+comp_opf=pd.read_excel('../A.DataGeneration/TestData/DataSet'+obj_fun+'/comp_burn_OPF_'+obj_fun+'.xlsx')
 comp_opf['PLTOT']=res_opf['PLTOT']
 comp_opf=comp_opf.sort_values(by='PLTOT').reset_index(drop=True)
 
