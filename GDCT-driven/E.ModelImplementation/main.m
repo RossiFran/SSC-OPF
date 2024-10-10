@@ -15,8 +15,8 @@ Pd_min=1; % Minimum total demand [p.u.]
 Pd_max=3; % Maximum total demand [p.u.]
 
 %% Select the objective function:
-obj_fun='Min_P_SG'; 
-%obj_fun='Min_P_losses';
+%obj_fun='Min_P_SG'; 
+obj_fun='Min_P_losses';
 
 % initialize P_SG according to the objective function
 if obj_fun == "Min_P_SG"
@@ -106,7 +106,6 @@ for jj=1:n_samples
     imag_parts_eig(jj,:)=imag_lambda;
 
     %Predicted critical eigenvalues' DI 
-    %DI_pred(jj)=-0.215572460806998*sol(22) + 4.62502859789996*max(0, 0.0661156865623242 - Rdroop) + 0.110776341832011*max(0, 0.1918907013156 - dat.Pd30) + 0.0649657573827422*max(0, 0.220618461001486 - dat.Pd20) + 0.063088397287007*max(0, 0.356720112803104 - dat.Pd40) + 0.0857638794063617*max(0, 0.40375936296932 - dat.Pd90) - 110.763361192817*max(0, 1.000688165 - V(3)) + 0.0923550295452405*max(0, dat.Pd20 - 0.220618461001486) + 0.0998747828126105*max(0, dat.Pd30 - 0.1918907013156) + 0.0384665711502371*max(0, dat.Pd40 - 0.356720112803104) + 0.0405598441389564*max(0, dat.Pd90 - 0.40375936296932) - 2.8629271007044*max(0, Rdroop - 0.0661156865623242) - 0.183979646609795*max(0, sol(21) - 0.018333097903834) + 115.146478369567*max(0, V(3) - 1.000688165) + 0.978909749993089;
     DI_pred(jj)=eval(predict_DI);
 
     if plot_poles == 1
@@ -124,6 +123,7 @@ for jj=1:n_samples
    
 end
 
+%%
 inputs_table=array2table(inputs,'VariableNames',{'Rdroop','VSC','SG2','SG1','PLTOT','PL2','PL3','PL4','PL5','PL6','PL7','PL8','PL9','DI','DI_pred_criteig'});
 
 solutions_table=array2table(sol_vect,'VariableNames',{'V1','V2','V3','V4','V5','V6','V7','V8','V9','Theta1','Theta2','Theta3','Theta4','Theta5','Theta6','Theta7','Theta8','Theta9',...
