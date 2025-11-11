@@ -44,3 +44,6 @@ To implement each methodology step, follow the instructions in the README file i
 ## References
 
 Rossi, F., Araujo, E. P., Mañe, M. C., & Bellmunt, O. G. (2022, October). Data generation methodology for machine learning-based power system stability studies. In 2022 IEEE PES Innovative Smart Grid Technologies Conference Europe (ISGT-Europe) (pp. 1-5). IEEE.
+
+## Acknowledgment
+This work has been carried out within the REFORMING project (Project PID2021-127788OA-I00), supported by the Fondo Europeo de Desarrollo Regional (FEDER) and the Ministerio de Ciencia e Innovación – Agencia Estatal de Investigación.
